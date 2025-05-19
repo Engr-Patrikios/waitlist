@@ -1,8 +1,10 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
-# dependencies
-/node_modules
-/.pnp
+# ───────────────
+# 📦 Dependencies
+# ───────────────
+node_modules/
+.pnp
 .pnp.*
 .yarn/*
 !.yarn/patches
@@ -10,32 +12,53 @@
 !.yarn/releases
 !.yarn/versions
 
-# testing
-/coverage
+# ───────────────
+# 🧪 Testing
+# ───────────────
+coverage/
 
-# next.js
-/.next/
-/out/
+# ───────────────
+# ⚙️ Next.js Build Output
+# ───────────────
+.next/
+out/
+.vercel/
 
-# production
-/build
+# ───────────────
+# 🏗️ Production Builds (if any)
+# ───────────────
+build/
+dist/
 
-# misc
-.DS_Store
-*.pem
+# ───────────────
+# 🔐 Environment Variables
+# ───────────────
+.env
+.env.local
+.env.*.local
 
-# debug
+# ───────────────
+# 🧠 TypeScript
+# ───────────────
+*.tsbuildinfo
+next-env.d.ts
+
+# ───────────────
+# 🐛 Debug Logs
+# ───────────────
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
-.pnpm-debug.log*
+pnpm-debug.log*
 
-# env files (can opt-in for committing if needed)
-.env*
+# ───────────────
+# 💻 OS & Editor Configs
+# ───────────────
+.DS_Store
+Thumbs.db
+*.pem
 
-# vercel
-.vercel
-
-# typescript
-*.tsbuildinfo
-next-env.d.ts
+# IDEs
+.vscode/
+.idea/
+*.swp
