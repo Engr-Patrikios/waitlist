@@ -37,7 +37,12 @@ const handleChange = (
   if (target instanceof HTMLInputElement && target.type === 'checkbox' && target.name !== 'early_tester') {
     const arrayName = target.name as keyof FormData
     const selectedValues = new Set(form[arrayName] as string[])
-    target.checked ? selectedValues.add(target.value) : selectedValues.delete(target.value)
+    if (target.checked) {
+  selectedValues.add(target.value)
+} else {
+  selectedValues.delete(target.value)
+}
+
     setForm({ ...form, [arrayName]: Array.from(selectedValues) })
   } else if (target instanceof HTMLInputElement && target.name === 'early_tester') {
     setForm({ ...form, early_tester: target.checked })
@@ -215,7 +220,7 @@ const handleChange = (
 
       <div className="flex items-center gap-2">
         <input type="checkbox" name="early_tester" checked={form.early_tester} onChange={handleChange} />
-        <label htmlFor="early_tester">I'm interested in being an early tester and providing feedback</label>
+        <label htmlFor="early_tester">I&rsquo;m interested in being an early tester and providing feedback</label>
       </div>
 
       <button type="submit" className="bg-[#f72585] text-white py-2 px-4 rounded hover:bg-[#d81b70] transition w-full">Join Waitlist</button>

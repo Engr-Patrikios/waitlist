@@ -24,6 +24,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(200).json({ ok: true })
   } catch (err) {
     console.error('❌ Server Error:', err)
-    return res.status(500).json({ error: 'Internal error', details: (err as any).message })
+    return res.status(500).json({ error: 'Internal error', details: (err as unknown as { message: string }).message
+ })
   }
 }

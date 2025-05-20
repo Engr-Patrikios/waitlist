@@ -11,7 +11,7 @@ export default function WaitlistPage() {
 
         <section className="bg-gradient-to-br from-[#4361ee] to-[#3f37c9] text-white rounded-xl p-6 text-center mb-8">
           <h1 className="text-2xl font-semibold mb-2">Be The First To Connect</h1>
-          <p>Join our exclusive waitlist for early access to the platform that's revolutionizing how we connect through online gaming.</p>
+          <p>Join our exclusive waitlist for early access to the platform that&rsquo;s revolutionizing how we connect through online gaming.</p>
         </section>
 
         <WaitlistForm />
